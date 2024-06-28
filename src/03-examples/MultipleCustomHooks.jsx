@@ -1,31 +1,17 @@
-import {Fragment} from "react";
-import { useFetch } from "../hooks/useFetch";
+import {UseFetch} from '../hooks/useFetch';
 
 export const MultipleCustomHooks = () => {
 
-    const { data, isLoading, hasError } = useFetch('https://swapi.dev/api/people/');
+	const {data, hasError, isLoading} = UseFetch('https://pokeapi.co/api/v2/pokemon/1');
 
-    console.log({ data, isLoading, hasError});
-
-    return (
-        <Fragment>
-            <h1>Star Wars Quotes</h1>
-            <hr/>
-
-            {
-                data ? (
-                    <blockquote className="blockquote text-end">
-                        <p className="mb-1">Hola Mundo</p>
-                        <footer className="blockquote-footer"> Pedro </footer>
-                    </blockquote>  
-                ) : (
-                              
-                    <div className="alert alert-info text-center">
-                        Cargando ...
-                    </div>        
-                )
-            }
-
-        </Fragment>
-    )
+	return (
+		<>
+			<h1>Información del Pokémon</h1>
+			<hr/>
+			{isLoading && <p>Cargando ...</p>}
+			{hasError && <p>Problemas tecnicos!! ...</p>}
+			<h2>{data?.name}</h2>
+			<pre>{JSON.stringify(data, null, 2)}</pre>
+		</>
+	)
 }
