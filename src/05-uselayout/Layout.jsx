@@ -1,9 +1,9 @@
 import {UseFetch} from "../hooks/useFetch";
 import {useCounter} from "../hooks/useCounter";
-import {LoadingMessage} from "./LoadingMessage";
-import {PokemonCard} from "./PokemonCard";
+import {LoadingMessage} from "../03-examples/LoadingMessage";
+import {PokemonCard} from "../03-examples/PokemonCard";
 
-export const MultipleCustomHooks = () => {
+export const Layout = () => {
 
 	const {counter, decrement, increment} = useCounter(1);
 	const {data, hasError, isLoading} = UseFetch(`https://pokeapi.co/api/v2/pokemon/${counter}`);
