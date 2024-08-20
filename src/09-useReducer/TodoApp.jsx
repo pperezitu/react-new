@@ -1,5 +1,5 @@
-import {useReducer} from "react";
-import {todoReducer} from "./todoReducer";
+import { useReducer } from "react";
+import { todoReducer } from "./todoReducer";
 
 const initialState = [
 	{
@@ -21,7 +21,7 @@ export const TodoApp = () => {
 		<>
 			<div className='container'>
 				<h1>TodoApp</h1>
-				<hr/>
+				<hr />
 				<div className="row">
 					<div className="col-7">
 						<ul className='list-group'>
@@ -31,13 +31,13 @@ export const TodoApp = () => {
 							</li>
 						</ul>
 					</div>
-					<div class="col-5">
+					<div className="col-5">
 						<h4>
 							Agregar TODO
 						</h4>
-						<hr/>
+						<hr />
 						<form className='d-flex flex-column'>
-							<input type="text" placeholder="¿Qué hay que hacer?" id="" className='form-control'/>
+							<input type="text" placeholder="¿Qué hay que hacer?" id="" className='form-control' />
 							<button type="submit" className='btn btn-outline-primary mt-2'>Agregar</button>
 						</form>
 					</div>
